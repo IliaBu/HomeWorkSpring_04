@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать пользователя</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<matrix></matrix>
+<div class="form-block">
+<form action="#" th:action="@{/user-create}" th:object="${user}" method="post">
+    <label class="form-label" for="firstName">Имя</label>
+    <input class="form-control" type="text" th:field="*{firstName}" id="firstName" placeholder="Введите имя пользователя"><br/>
+    <label class="form-label" for="lastName">Фамилия</label>
+    <input class="form-control" type="text" th:field="*{lastName}" id="lastName" placeholder="Введите фамилию пользователя"><br/>
+    <input class="btn btn-primary" type="submit" value="Создать пользователя">
+    <input class="btn btn-danger" type="button" onclick="history.back();" value="Отмена"/>
+</form>
+</div>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/matrix.js"></script>
+</body>
+</html>

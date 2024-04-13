@@ -1,0 +1,18 @@
+server:
+  port: 7551
+spring:
+  application:
+    name: HomeWorkSpring_04
+  datasource:
+    url: jdbc:h2:mem:db
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+sqlrequest:
+  findAll: SELECT * FROM userTable
+  save: INSERT INTO userTable (firstName,lastName) VALUES (?, ?)
+  delete: DELETE FROM userTable WHERE id=?
+  getById: SELECT id,firstName,lastName FROM userTable WHERE id = ?
+  update: UPDATE userTable SET firstName = ?, lastName = ? WHERE id = ?
+  count: SELECT count(*) FROM userTable WHERE id = ?
